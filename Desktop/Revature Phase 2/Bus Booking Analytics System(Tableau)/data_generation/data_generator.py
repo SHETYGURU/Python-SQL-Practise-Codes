@@ -194,9 +194,14 @@ def generate_dirty_bookings(customers_df, buses_df, routes_df, num_records=3000)
     total_days = (end_date - start_date).days + 1
     
     b_id = 1
+    customer_booking_counts = {c_id: 0 for c_id in cust_ids}
     
     # Generate scheduled runs across the timeline
     for d in range(total_days):
+        # Skip ~40% of the days randomly to reduce total bookings to a realistic level
+        if random.random() > 0.60:
+            continue
+            
         current_date = start_date + datetime.timedelta(days=d)
         
         bus_id = random.choice(bus_ids)
@@ -216,7 +221,13 @@ def generate_dirty_bookings(customers_df, buses_df, routes_df, num_records=3000)
             if single_trip_pool and random.random() < 0.05:
                 cust_id = single_trip_pool.pop()
             else:
-                cust_id = random.choice(frequent_custs)
+                # Find frequent customer candidates who have < 65 bookings to keep it under 75 max
+                candidates = [c for c in frequent_custs if customer_booking_counts[c] < 65]
+                if not candidates:
+                    candidates = frequent_custs
+                cust_id = random.choice(candidates)
+                
+            customer_booking_counts[cust_id] += 1
             
             lead_time = random.choice([0, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 6, 7, 10, 14])
             booking_date = current_date - datetime.timedelta(days=lead_time)
