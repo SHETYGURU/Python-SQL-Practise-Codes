@@ -1,0 +1,124 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-heading);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Prodflare Specific Colors */
+  --color-mint-primary: var(--mint-primary);
+  --color-mint-glow: var(--mint-glow);
+  --color-brown-accent: var(--brown-accent);
+  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+}
+
+:root {
+  --background: #FCFCFA;
+  --foreground: #111111;
+  --card: #F6F4EF;
+  --card-foreground: #111111;
+  --popover: #FCFCFA;
+  --popover-foreground: #111111;
+  --primary: #111111;
+  --primary-foreground: #FCFCFA;
+  --secondary: #F6F4EF;
+  --secondary-foreground: #111111;
+  --muted: #F6F4EF;
+  --muted-foreground: #555555;
+  --accent: #F6F4EF;
+  --accent-foreground: #111111;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: rgba(0, 0, 0, 0.08);
+  --input: rgba(0, 0, 0, 0.08);
+  --ring: #8FD8B6;
+  --radius: 0.625rem;
+  
+  /* Accent Tokens */
+  --mint-primary: #8FD8B6;
+  --mint-glow: #8FD8B6;
+  --brown-accent: #C7A27C;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.dark {
+  --background: #08110D;
+  --foreground: #FFFFFF;
+  --card: #0F1713;
+  --card-foreground: #FFFFFF;
+  --popover: #08110D;
+  --popover-foreground: #FFFFFF;
+  --primary: #FFFFFF;
+  --primary-foreground: #08110D;
+  --secondary: #0F1713;
+  --secondary-foreground: #FFFFFF;
+  --muted: #0F1713;
+  --muted-foreground: #A0A0A0;
+  --accent: #0F1713;
+  --accent-foreground: #FFFFFF;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #7AE7B6;
+
+  /* Accent Tokens */
+  --mint-primary: #A8F2D1;
+  --mint-glow: #7AE7B6;
+  --brown-accent: #D4B89E;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
