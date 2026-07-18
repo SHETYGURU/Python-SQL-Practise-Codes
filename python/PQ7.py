@@ -1,3 +1,4 @@
+# 7. Given an array of integers, move all zeroes to the end while maintaining the order of the remaining elements.
 def rearrange_zeros(arr):
     # arr.list()
     result=[]

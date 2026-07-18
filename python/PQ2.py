@@ -1,3 +1,4 @@
+# 2. Given a string, find the first non-repeating character.
 # def non_repeating_cahr(str):
    
 #     freq={}

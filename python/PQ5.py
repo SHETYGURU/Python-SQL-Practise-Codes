@@ -1,3 +1,4 @@
+# 5. Given a string, remove duplicate characters while preserving their first occurrence.
 # def remove_duplicates(strng):
 #     freq={}
 #     for i in strng:

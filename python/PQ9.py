@@ -1,3 +1,4 @@
+# 9. Given two lists, find the common elements without duplicates.
 # def find_common_ele(arr1,arr2):
 #     result=[]
 #     for i in arr1:

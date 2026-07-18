@@ -1,3 +1,4 @@
+# 4. Given two strings, determine whether they are anagrams.
 # def anagram(strng1,strng2):
 #     freq1={}
 #     freq2={}
@@ -34,8 +35,7 @@ def anagram(strng1,strng2):
         else:
             freq[char]-=1
         
-        if freq[char]<0:
-            return False        
+              
     return True
 
 print(anagram("silent","listen"))

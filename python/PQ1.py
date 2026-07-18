@@ -1,3 +1,4 @@
+# 1. Given a string, count the frequency of each character while ignoring spaces and letter case.
 # def count_char():
 #     count=0
 #     str=input()

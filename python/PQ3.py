@@ -1,3 +1,4 @@
+# 3. Given a string, return the character that appears the maximum number of times.
 def max_freq_char(strng):
     freq={}
 
