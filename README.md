@@ -1,11 +1,27 @@
 # Python & SQL Practice Codes
 
-This repository is organized to store practice problems and solutions for Python and SQL.
+This repository is organized to store practice problems and solutions for Python and SQL. It serves as a personal workbook for mastering programming logic and database queries.
 
-## Repository Structure
+## Repository Details
 
-- **[python/](file:///c:/Users/user/Desktop/Python Practise  Codes/python)**: Contains Python practice questions and solutions.
-  - `P_Questions.txt`: A text file listing python practice questions.
-  - `PQ1.py` to `PQ5.py`: Python scripts solving individual practice questions.
-- **[sql/](file:///c:/Users/user/Desktop/Python Practise  Codes/sql)**: Reserved for SQL practice queries and database exercises (currently empty).
-for url add 
+- **GitHub Remote:** `https://github.com/SHETYGURU/Python-SQL-Practise-Codes`
+- **Default Branch:** `main`
+
+---
+
+## Directory Structure
+
+You can navigate the repository using the following relative paths (which map directly to directories on GitHub):
+
+- **[`python/`](./python)**: Contains Python practice questions and solutions.
+- **[`sql/`](./sql)**: Reserved for SQL practice queries and database exercises (currently empty).
+
+---
+
+## Getting Started
+
+### Cloning the Repository
+To clone this repository to your local system:
+```bash
+git clone https://github.com/SHETYGURU/Python-SQL-Practise-Codes.git
+```
