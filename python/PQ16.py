@@ -3,6 +3,20 @@
 
 def two_sum(nums,num):
     dict={}
-    for i in nums:
+    for i,value in enumerate(nums):         #to get value and index value
+        remains= num-value
+
+        if remains in dict:
+            return [dict[remains],i]
         
+        dict[value]=i
+    return []
+
+nums = [2, 7, 11, 15]
+target = 9
+
+print(two_sum(nums,target))
+        
+
+
 
